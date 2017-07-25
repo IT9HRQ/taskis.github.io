@@ -1,0 +1,22 @@
+        
+<div 
+    class="task" 
+    ng-class="{completed:completed}"
+    ng-repeat="task in tasks" 
+    ng-init="completed = task.status == 'completed'"
+    >
+    <label>
+        <input 
+            type="checkbox" 
+            class="uk-checkbox"
+            ng-model="completed"
+            ng-change="change(task)"
+            />
+        <span class="caption">
+            <span class="label" ng-bind-html="task.title | taskline"></span>
+            <span class="controls">
+                <a ng-click="remove(task)"><i class="uk-icon-remove"></i></a>
+            </span>
+        </span>     
+    </label> 
+</div>
