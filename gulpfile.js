@@ -12,13 +12,13 @@ gulp.task("default", function() {
         .pipe(concatCss("style.css"))
         .pipe(modifyCssUrls({ modify: function (url, filePath) { return "../fonts/" + basename(url); } }))
         .pipe(gulp.dest("./css"));
-    gulp.src("./vendor/**/fonts/*.{ttf,woff,eof,eot,svg,htc}")
+    gulp.src("./bower_components/**/fonts/*.{ttf,woff,eof,eot,svg,htc}")
         .pipe(rename({ dirname: '' }))
         .pipe(gulp.dest("./fonts"));
     gulp.src("./app/**/*.html")
         .pipe(templateCache({root: "app/", module: "app"}))
         .pipe(gulp.dest("app"));
-    gulp.src(["./vendor/**/*.min.js", "./app/**/*.js"])
+    gulp.src(["./bower_components/**/*.min.js", "./app/**/*.js"])
         .pipe(concat("app.js"))
         .pipe(gulp.dest("./js"));
 });
