@@ -1,5 +1,8 @@
 /**
  *
  */
+angular
+    .module("taskis", ["ui.router"])
+    .config(function() {
 
-angular.module("app", ["ui.router"]);
+    });

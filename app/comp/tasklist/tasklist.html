@@ -1,8 +1,8 @@
-        
+
 <div 
-    class="task" 
+    class="task"
     ng-class="{completed:completed}"
-    ng-repeat="task in tasks" 
+    ng-repeat="task in tasklist"
     ng-init="completed = task.status == 'completed'"
     >
     <label>
@@ -10,7 +10,7 @@
             type="checkbox" 
             class="uk-checkbox"
             ng-model="completed"
-            ng-change="change(task)"
+            ng-change="$ctrl.change(task)"
             />
         <span class="caption">
             <span class="label" ng-bind-html="task.title | taskline"></span>

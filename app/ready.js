@@ -3,9 +3,9 @@
  */
 function ready() {
     gapi.auth.authorize({
-        client_id: CLIENT_ID,
-        discoveryDocs: DISCOVERY,
-        scope: SCOPES.join(" "),
+        client_id: config.client_id,
+        discoveryDocs: config.discovery,
+        scope: config.scopes.join(" "),
         immediate: true
     }, function (authResult) {
         if (authResult && !authResult.error) {
@@ -16,8 +16,6 @@ function ready() {
                     }).execute(function(resp) {
                         console.log('Retrieved profile for:' ,resp);
                     });
-
-                    //
                     angular.bootstrap(document, ["taskis"]);
                 });
             });

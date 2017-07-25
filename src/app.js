@@ -1,19 +1,14 @@
-
-
-
-//
-function signin() {
-    
-    //
+/**
+ *
+ */
+function start() {
     gapi.auth.authorize({
         client_id: CLIENT_ID,
         discoveryDocs: DISCOVERY,
         scope: SCOPES.join(" "),
         immediate: false
     }, function (authResult) {
-        
-        //
-        if (authResult && !authResult.error) {            
+        if (authResult && !authResult.error) {
             gapi.client.load('tasks', 'v1', function() {                
                 UIkit.modal("#signin").hide();
                 angular.bootstrap(document, ["taskis"]);
