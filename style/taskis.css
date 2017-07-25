@@ -1,0 +1,145 @@
+.uk-navbar-brand {
+    background: #ffb74d;
+    font-size: 15px;
+    line-height: 40px;
+    font-weight: bold;
+    padding-left: 9px;
+}
+
+.uk-navbar-brand img {
+    border: 0;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+.widget-item
+{
+    position: relative;
+}
+
+.widget-item .title
+{
+    margin-left: 18px;
+}
+
+.widget textarea.edit
+{
+    width: 100%;
+    height: 220px;
+    padding: 4px;
+    border: 1px solid #ccc;
+}
+
+.uk-panel-title
+{
+    margin-bottom: 5px;
+}
+
+.widget-plus .uk-panel
+{
+    width: 12px;
+}
+
+.widget-plus .uk-panel:hover
+{
+    cursor: pointer;
+}
+
+.uk-fixed-navigation
+{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 1009;
+}
+
+.mainpage
+{
+    margin-top: 51px;
+    padding: 0 10px;
+}
+
+.uk-margin-bottom
+{
+    margin-bottom: 10px !important;
+}
+
+.uk-container
+{
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.uk-checkbox {
+    width: 15px;
+    height: 15px;
+    vertical-align: -2px;
+}
+
+.widget-body {
+    line-height: 18px;
+}
+
+.task {
+    margin-left: -4px;
+    padding: 0;
+}
+
+.task .uk-checkbox {
+    position: absolute;
+    margin-top: 6px;
+}
+
+.task label {
+    cursor: pointer;
+}
+
+.task label span.caption {
+    padding: 4px 15px 4px 25px;
+    display: inline-block;
+}
+
+.task label span.caption span.label {
+    text-decoration: none;
+    background: none!important;
+    border: none;
+    padding: 0!important;
+}
+
+.task label:hover span.caption span.label {
+    text-decoration: underline;
+}
+
+.task.completed label span.caption span.label {
+    text-decoration: line-through;
+    color: #abc;
+}
+
+.uk-navbar {
+    box-shadow: 0 0 6px #abc;
+    border-bottom: 1px solid #abc;
+}
+
+.uk-panel-box-secondary {
+    background-color: #f8f7f6;
+}
+
+.task label span.caption span.controls a {
+    padding: 0 2px;
+    display: inline-block;
+    color: #444;
+}
+
+.task label span.caption span.controls {
+    visibility: hidden;
+}
+
+.task label span.caption:hover span.controls {
+    visibility: visible;
+}
+
+.uk-button-small {
+    font-size: 14px;
+}
+
