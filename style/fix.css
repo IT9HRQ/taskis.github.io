@@ -1,0 +1,33 @@
+
+.uk-icon-logo:before {
+    /*content: "\@{ini_icon_logo}";*/
+}
+
+.uk-icon-logo {
+    /*content: "@{ini_icon_logo}";*/
+}
+
+.tm-navbar .uk-navbar-nav > li.uk-active > a 
+{
+    background-color: #000;
+}
+
+.tm-section-color-1 { 
+    background-color: #000;
+}
+                      
+.tm-button-download {
+    color: #2A0 !important;
+}
+
+.tm-navbar {
+    background-color: #222;
+}
+
+.tm-footer {
+    background-color: #777;
+}
+
+.tm-background {
+    background-color: #333;
+}
