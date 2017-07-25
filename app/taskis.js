@@ -1,6 +1,11 @@
 /**
  *
  */
+angular.module("taskis", ["app"]);
+
+/**
+ *
+ */
 function taskis() {
     gapi.auth.authorize({
         client_id: config.client_id,

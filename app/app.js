@@ -2,7 +2,7 @@
  *
  */
 angular
-    .module("taskis", ["ui.router"])
+    .module("app", ["ui.router"])
     .config(function() {
 
     });
