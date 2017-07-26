@@ -1,11 +1,10 @@
 /**
  *
- *
  */
 
 angular
     .module("app")
     .component("layout", {
-        templateUrl: "app/components/layout/layout.html",
+        templateUrl: "app/comp/layout/layout.html",
         controller: function($scope) {}
     });
