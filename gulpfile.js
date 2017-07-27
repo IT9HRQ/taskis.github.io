@@ -17,7 +17,7 @@ gulp.task("style", function() {
         .pipe(concatCss("style.css"))
         .pipe(modifyCssUrls({
             modify: function (url, filePath) {
-                return "../../fonts/" + basename(url);
+                return "../fonts/" + basename(url);
             }
         }))
         .pipe(gulp.dest("./css"));

@@ -7,6 +7,7 @@ angular.module("taskis", ["app"]);
  *
  */
 function taskis() {
+    console.log("taskis: start");
     gapi.auth.authorize({
         client_id: config.client_id,
         discoveryDocs: config.discovery,
