@@ -13,11 +13,11 @@ gulp.task("default", function(done) {
 });
 
 gulp.task("style", function() {
-    return gulp.src(["./style/uikit.css", "./style/**/*.css"])
+    return gulp.src(["./app/style/uikit.css", "./app/style/**/*.css"])
         .pipe(concatCss("style.css"))
         .pipe(modifyCssUrls({
             modify: function (url, filePath) {
-                return "../fonts/" + basename(url);
+                return "../../fonts/" + basename(url);
             }
         }))
         .pipe(gulp.dest("./css"));
