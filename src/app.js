@@ -10,13 +10,7 @@ angular
                 url: "/board",
                 templateUrl: "view/board.html",
                 controller: function($scope) {
-                    gapi.client.tasks.tasklists.list({
-                        'maxResults': 10
-                    }).execute(function(resp) {                         
-                        $scope.$apply(function() {
-                            $scope.projects = resp.items;
-                        });
-                    });
+
                 }
             })
             .state("about", {});

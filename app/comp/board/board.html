@@ -4,8 +4,11 @@
     id="widgets"
     class="uk-grid uk-grid-small"
     >
+
+    {{ $ctrl.projects }} - {{ projects }}
+
     <project
-      ng-repeat="project in $root.projects"
+      ng-repeat="project in $ctrl.projects"
       class="widget uk-width-medium-1-3"
       >
     </project>

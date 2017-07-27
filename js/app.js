@@ -360,7 +360,7 @@ angular
             });
     });
 
-angular.module('app').run(['$templateCache', function($templateCache) {$templateCache.put('app/comp/board/board.html','\n<div class="mainpage">\n  <div\n    id="widgets"\n    class="uk-grid uk-grid-small"\n    >\n    <project\n      ng-repeat="project in projects"\n      class="widget uk-width-medium-1-3"\n      >\n    </project>\n  </div>\n</div>\n   \n');
+angular.module('app').run(['$templateCache', function($templateCache) {$templateCache.put('app/comp/board/board.html','\n<div class="mainpage">\n  <div\n    id="widgets"\n    class="uk-grid uk-grid-small"\n    >\n\n    {{ $ctrl.projects }} - {{ projects }}\n\n    <project\n      ng-repeat="project in $ctrl.projects"\n      class="widget uk-width-medium-1-3"\n      >\n    </project>\n  </div>\n</div>\n   \n');
 $templateCache.put('app/comp/footer/footer.html','<div class="tm-footer">\n    <div class="uk-container uk-container-center uk-text-center">\n\n        <ul class="uk-subnav uk-subnav-line uk-flex-center">\n            <li><a href="http://github.com/uikit/uikit">GitHub</a></li>\n            <li><a href="http://github.com/uikit/uikit/issues">Issues</a></li>\n            <li><a href="http://github.com/uikit/uikit/blob/master/CHANGELOG.md">Changelog</a></li>\n            <li><a href="https://twitter.com/getuikit">Twitter</a></li>\n        </ul>\n\n        <div class="uk-panel">\n            <p>Made by <a href="http://www.yootheme.com/">YOOtheme</a> with love and caffeine.<br>Licensed under <a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>\n            <a href="https://getuikit.com/v2/index.html"><img src="./Get started - UIkit documentation_files/logo_uikit.svg" width="90" height="30" title="UIkit" alt="UIkit"></a>\n        </div>\n\n    </div>\n</div>\n');
 $templateCache.put('app/comp/header/header.html','<nav \n    class="uk-navbar uk-fixed-navigation"\n    >\n    \n    <a class="uk-navbar-brand uk-hidden-small" ui-sref="home">\n        <img src="img/taskis.png" alt="Taskis">\n        Taskis\n    </a>\n    \n    <ul class="uk-navbar-nav uk-hidden-small">\n        <li ui-sref-active="uk-active">\n            <a ui-sref="board">Board</a>\n        </li>      \n    </ul>\n\n    <ul class="uk-navbar-nav uk-hidden-small uk-float-right">\n        <li ui-sref-active="uk-active">\n            <a href="javascript:;">\n                <i class="uk-icon-plus"></i>\n                Add project\n            </a>\n        </li>      \n    </ul>\n\n    <a \n        href="#offcanvas" \n        class="uk-navbar-toggle uk-visible-small" \n        data-uk-offcanvas=""\n        >            \n    </a>\n\n    <div \n        class="uk-navbar-brand uk-navbar-center uk-visible-small"\n        >      \n        <img src="img/taskis.png" alt="Taskis">\n        Taskis\n    </div>\n    \n</nav>\n\n');
 $templateCache.put('app/comp/layout/layout.html','\n<header></header>\n\n<div ui-view></div>\n');
@@ -425,7 +425,15 @@ angular
     .module("app")
     .component("board", {
         templateUrl: "app/comp/board/board.html",
-        controller: function($scope) {}
+        controller: function($scope) {
+            gapi.client.tasks.tasklists.list({
+                'maxResults': 10
+            }).execute(function(resp) {
+                $scope.$apply(function() {
+                    $scope.projects = resp.items;
+                });
+            });
+        }
     });
 
 /**
@@ -473,6 +481,16 @@ angular
         controller: function($scope) {}
     });
 
+/**
+ *
+ */
+
+angular
+    .module("app")
+    .component("project", {
+        templateUrl: "app/comp/project/project.html",
+        controller: function($scope) {}
+    });
 
 /**
  *
