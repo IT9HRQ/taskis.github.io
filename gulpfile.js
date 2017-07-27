@@ -20,13 +20,13 @@ gulp.task("style", function() {
                 return "../fonts/" + basename(url);
             }
         }))
-        .pipe(gulp.dest("./public/css"));
+        .pipe(gulp.dest("./css"));
 });
 
 gulp.task("fonts", function() {
     return gulp.src("./bower_components/**/fonts/*.{ttf,woff,eof,eot,svg,htc}")
         .pipe(rename({dirname: ''}))
-        .pipe(gulp.dest("./public/fonts"));
+        .pipe(gulp.dest("./fonts"));
 });
 
 gulp.task("html", function() {
