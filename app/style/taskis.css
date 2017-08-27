@@ -143,3 +143,9 @@
     font-size: 14px;
 }
 
+.uk-loading {
+    background-image: url('../img/loading.gif');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
