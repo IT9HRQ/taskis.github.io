@@ -8656,3 +8656,10 @@ a.uk-thumbnail:hover {
 .uk-button-small {
   font-size: 14px;
 }
+
+.uk-loading {
+  background-image: url("../fonts/loading.gif");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
