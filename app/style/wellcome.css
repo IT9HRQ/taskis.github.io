@@ -104,9 +104,9 @@ html {
  */
 
 .tm-section .uk-heading-large { margin-bottom: 20px; }
-.tm-section .uk-text-large { margin-bottom: 60px; }
+.tm-section .uk-text-large { margin-bottom: 40px; }
 
-.tm-section-color-1 { background: #2ba3d4 url("../images/bg_teaser.svg") 50% 50% no-repeat; }
+.tm-section-color-1 { background: #ffb74d; }
 
 /* Desktop and bigger */
 @media (max-width: 959px) {
@@ -120,7 +120,7 @@ html {
 .tm-section-colored,
 .tm-section-colored h1,
 .tm-section-colored h2,
-.tm-section-colored a:not([class]) { color: #fff !important; }
+.tm-section-colored a:not([class]) { color: #000 !important; }
 
 .tm-section-color-2 a { text-decoration: underline; }
 
@@ -139,8 +139,13 @@ html {
  */
 
 .tm-logo {
-    font-size: 500% !important;
     margin: 10px 0 20px 0;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.tm-logo i {
+    font-size: 500% !important;
 }
 
 .tm-button-download {
@@ -778,3 +783,9 @@ input.sp-input {
 .sp-hue { font: inherit; }
 
 .sp-input-container { margin-bottom: 10px; }
+
+#google-signin-button {
+    width: 320px;
+    height: 60px;
+    display: inline-block;
+}

@@ -13,42 +13,25 @@ initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 </head>
 <body>
 <div>
-
-    <nav class="tm-navbar uk-navbar uk-navbar-attached">
-        <div class="uk-container uk-container-center">
-
-            <a class="uk-navbar-brand uk-hidden-small" href="index.html"><img class="uk-margin uk-margin-remove" src="docs/images/logo_uikit.svg" width="90" height="30" title="UIkit" alt="UIkit"></a>
-
-            <ul class="uk-navbar-nav uk-hidden-small">
-                <li><a href="docs/documentation_get-started.html">Get Started</a></li>
-                <li><a href="docs/core.html">Core</a></li>
-                <li><a href="docs/components.html">Components</a></li>
-                <li><a href="docs/customizer.html">Customizer</a></li>
-                <li><a href="showcase/index.html">Showcase</a></li>
-                <li><a href="docs/tutorials.html">Tutorials</a></li>
-                <li><a href="/">UIkit 3</a></li>
-            </ul>
-
-            <a href="#tm-offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
-
-            <div class="uk-navbar-brand uk-navbar-center uk-visible-small"><img src="docs/images/logo_uikit.svg" width="90" height="30" title="UIkit" alt="UIkit"></div>
-
-        </div>
-    </nav>
-
     <div class="tm-section tm-section-color-1 tm-section-colored">
         <div class="uk-container uk-container-center uk-text-center">
-            <i class="tm-logo uk-icon-check-square-o uk-icon-large"></i>
+            <span class="tm-logo">
+                <i class="uk-icon-check-square-o uk-icon-large"></i><br/>
+                taskis.github.io
+            </span>
 
-            <p class="uk-text-large">A lightweight and modular front-end framework<br class="uk-hidden-small"> for developing fast and powerful web interfaces.</p>
-
-            <div id="my-signin2"></div>
-
-
+            <p class="uk-text-large">
+                A lightweight and modular front-end framework
+                <br class="uk-hidden-small">
+                for developing fast and powerful web interfaces.
+            </p>
+            <p>
+                Sign in with your Google account
+            </p>
+            <div id="google-signin-button"></div>
             <ul class="tm-subnav uk-subnav uk-flex-center">
                 <li><a href="https://github.com/uikit/uikit">GitHub</a></li>
                 <li><a href="docs/documentation_get-started.html">Get Started</a></li>
-                <li data-uikit-version></li>
             </ul>
 
             <ul class="tm-subnav uk-subnav uk-flex-center">
@@ -57,7 +40,6 @@ initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
                 <li><a href="https://twitter.com/getuikit"><i class="uk-icon-twitter"></i> @getuikit</a></li>
                 <li><a href="https://gitter.im/uikit/uikit"><i class="uk-icon-comments-o"></i> Community</a></li>
             </ul>
-
         </div>
     </div>
 
@@ -355,18 +337,17 @@ initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
         console.log(error);
     }
     function renderButton() {
-        gapi.signin2.render('my-signin2', {
-            'scope': 'profile email',
-            'width': 240,
-            'height': 50,
-            'longtitle': true,
-            'theme': 'dark',
-            'onsuccess': onSuccess,
-            'onfailure': onFailure
+        gapi.signin2.render("google-signin-button", {
+            scope: "profile email",
+            width: 320,
+            height: 60,
+            longtitle: true,
+            onsuccess: onSuccess,
+            onfailure: onFailure
         });
     }
 </script>
-<script src="https://apis.google.com/js/platform.js?onload=renderButton"></script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 <span style="display:none;">:-j</span>
 </body>
 </html>
