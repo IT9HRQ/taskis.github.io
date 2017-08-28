@@ -10,4 +10,7 @@ angular
                 url: "/",
                 template: "<board/>"
             });
+    })
+    .run(function(){
+        $("body").removeClass("uk-loading");
     });

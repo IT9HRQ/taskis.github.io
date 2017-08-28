@@ -5,7 +5,7 @@ var concat = require("gulp-concat");
 var concatCss = require("gulp-concat-css");
 var modifyCssUrls = require("gulp-modify-css-urls");
 var templateCache = require("gulp-angular-templatecache");
-var runSequence = require('run-sequence');
+var runSequence = require("run-sequence");
 var basename = require("path").basename;
 
 gulp.task("default", function(done) {

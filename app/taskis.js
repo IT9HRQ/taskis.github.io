@@ -26,10 +26,7 @@ function taskis() {
                 });
             });
         } else {
-            jQuery.get("signin.html", function(html){
-                jQuery("body").append(html);
-                UIkit.modal("#signin").show();
-            });
+            window.location = "wellcome.html";
         }
     });
 }
