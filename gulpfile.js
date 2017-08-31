@@ -1,5 +1,6 @@
 
 var gulp = require("gulp");
+var watch = require('gulp-watch');
 var rename = require("gulp-rename");
 var concat = require("gulp-concat");
 var concatCss = require("gulp-concat-css");
@@ -46,4 +47,15 @@ gulp.task("app", function() {
     ])
     .pipe(concat("app.js"))
     .pipe(gulp.dest("./js"));
+});
+
+gulp.task("watch", function() {
+    var files = [
+        'app/**/*.js',
+        'app/**/*.css',
+        'app/**/*.scss'
+    ];
+    return gulp.watch(files, function() {
+        gulp.start("default");
+    });
 });

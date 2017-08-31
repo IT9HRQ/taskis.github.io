@@ -8,6 +8,7 @@
     "gulp-concat-css": "^2.3.0",
     "gulp-modify-css-urls": "^0.2.2",
     "gulp-rename": "^1.2.2",
+    "gulp-watch": "^4.3.11",
     "run-sequence": "^1.2.2"
   }
 }
