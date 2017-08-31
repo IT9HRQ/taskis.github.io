@@ -22,4 +22,15 @@ angular
                 });
             }
         }
-    });
+    })
+    .filter("taskline", function($sce) {
+        function urlify(text) {
+            var urlRegex = /(https?:\/\/[^\s]+)/g;
+            return text.replace(urlRegex, function(url) {
+                return '<a href="' + url + '" target="_blank"><i class="uk-icon-bookmark"></i></a>';
+            })
+        }
+        return function(input) {
+            return $sce.trustAs('html', urlify(input));
+        };
+    })

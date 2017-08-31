@@ -1,0 +1,13 @@
+.uk-navbar-brand {
+    background: #ffb74d;
+    font-size: 15px;
+    line-height: 40px;
+    font-weight: bold;
+    padding-left: 9px;
+}
+
+.uk-navbar-brand img {
+    border: 0;
+    vertical-align: middle;
+    margin-top: -2px;
+}
