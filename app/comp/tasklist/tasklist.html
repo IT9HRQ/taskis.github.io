@@ -1,22 +1,27 @@
+<div class="tasklist">
 
-<div 
-    class="task"
-    ng-class="{completed:completed}"
-    ng-repeat="task in tasklist"
-    ng-init="completed = task.status == 'completed'"
-    >
-    <label>
-        <input 
-            type="checkbox" 
-            class="uk-checkbox"
-            ng-model="completed"
-            ng-change="$ctrl.change(task)"
-            />
-        <span class="caption">
-            <span class="label" ng-bind-html="task.title | taskline"></span>
-            <span class="controls">
-                <a ng-click="remove(task)"><i class="uk-icon-remove"></i></a>
+
+    {{ tasklist.items }}
+
+    <div
+        class="task"
+        ng-class="{completed:completed}"
+        ng-repeat="task in tasklist"
+        ng-init="completed = task.status == 'completed'"
+        >
+        <label>
+            <input
+                type="checkbox"
+                class="uk-checkbox"
+                ng-model="completed"
+                ng-change="$ctrl.change(task)"
+                />
+            <span class="caption">
+                <span class="label" ng-bind-html="task.title | taskline"></span>
+                <span class="controls">
+                    <a ng-click="remove(task)"><i class="uk-icon-remove"></i></a>
+                </span>
             </span>
-        </span>     
-    </label> 
+        </label>
+    </div>
 </div>
