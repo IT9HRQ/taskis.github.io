@@ -8537,10 +8537,6 @@ a.uk-thumbnail:hover {
   border: 1px solid #ccc;
 }
 
-.uk-panel-title {
-  margin-bottom: 5px;
-}
-
 .widget-plus .uk-panel {
   width: 12px;
 }
@@ -9570,6 +9566,15 @@ input.sp-input {
 .view {
   margin-top: 51px;
   padding: 0 10px;
+}
+
+.project .uk-panel-box {
+  border: 1px solid #dec;
+}
+
+.project .uk-panel-title {
+  margin-bottom: 5px;
+  border-bottom: 1px solid #dec;
 }
 
 .task {

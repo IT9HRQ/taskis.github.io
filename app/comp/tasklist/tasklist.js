@@ -5,12 +5,14 @@
 angular
     .module("app")
     .component("tasklist", {
-        bindings: { project: "<" },
+        bindings: { project: "<", projectIndex: "<" },
         templateUrl: "app/comp/tasklist/tasklist.html",
-        controller: function($scope) {
+        controller: function($scope, $rootScope) {
             this.$onInit = function() {
+                var projectIndex = $scope.$ctrl.projectIndex;
                 console.log("progect:", $scope.$ctrl.project);
                 $scope.project = $scope.$ctrl.project;
+                $scope.projectIndex = projectIndex;
                 gapi.client.tasks.tasks.list({
                     tasklist: $scope.project.id,
                     //maxResults: 10
@@ -18,6 +20,7 @@ angular
                     $scope.$apply(function() {
                         console.log('tasklist:', resp.items);
                         $scope.tasklist = resp.items;
+                        $rootScope.boardScores[projectIndex] = resp.items.length;
                     });
                 });
             }

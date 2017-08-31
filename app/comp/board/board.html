@@ -1,9 +1,15 @@
 
+{{ $root.boardScores }}
+
+{{ boardLayout = updateBoardLayout($root.boardScores) }}
+
+{{ boardClasses = updateBoardClasses($root.boardScores) }}
+
 <div class="board uk-grid uk-grid-small">
-    <project
+    <div
         ng-repeat="project in projects"
-        project="project"
-        class="project uk-width-medium-1-3"
+        ng-class="['project', boardClasses[$index]]"
         >
-    </project>
+        <project project-index="$index" project="project"></project>
+    </div>
 </div>
