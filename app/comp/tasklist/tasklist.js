@@ -21,6 +21,10 @@ angular
                     });
                 });
             }
+            $scope.taskline = function(task) {
+                var taskline = task.notes ? (task.title + "\n" + task.notes).trim() : task.title;
+                return taskline ? taskline : "nothing special";
+            };
         }
     })
     .filter("taskline", function($sce) {
@@ -30,7 +34,13 @@ angular
                 return '<a href="' + url + '" target="_blank"><i class="uk-icon-bookmark"></i></a>';
             })
         }
+        function nl2br(text) {
+            if (typeof text == "string") {
+                return text.replace(/(?:\r\n|\r|\n)/g, "<br/>");
+            }
+            return text;
+        }
         return function(input) {
-            return $sce.trustAs('html', urlify(input));
+            return $sce.trustAs("html", nl2br(urlify(input)));
         };
     })
