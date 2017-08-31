@@ -14,7 +14,11 @@ gulp.task("default", function(done) {
 });
 
 gulp.task("style", function() {
-    return gulp.src(["./app/style/uikit.css", "./app/style/**/*.css"])
+    var files = [
+        "./app/style/uikit.css",
+        "./app/**/*.css"
+    ];
+    return gulp.src(files)
         .pipe(concatCss("style.css"))
         .pipe(modifyCssUrls({
             modify: function (url, filePath) {
@@ -51,11 +55,16 @@ gulp.task("app", function() {
 
 gulp.task("watch", function() {
     var files = [
-        'app/**/*.js',
-        'app/**/*.css',
-        'app/**/*.scss'
+        "app/**/*.js",
+        "app/**/*.css",
+        "app/**/*.scss",
+        "app/**/*.html",
+        "!app/templates.js"
     ];
     return gulp.watch(files, function() {
         gulp.start("default");
+        setTimeout(function() {
+            gulp.start("default");
+        }, 2000);
     });
 });

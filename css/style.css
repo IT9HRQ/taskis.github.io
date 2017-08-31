@@ -9620,3 +9620,7 @@ input.sp-input {
   height: 60px;
   display: inline-block;
 }
+
+.view {
+  padding-top: 40px;
+}

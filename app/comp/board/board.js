@@ -11,7 +11,7 @@ angular
                 'maxResults': 10
             }).execute(function(resp) {
                 $scope.$apply(function() {
-                    console.log(resp);
+                    console.log('projects:', resp);
                     $scope.projects = resp.items;
                 });
             });

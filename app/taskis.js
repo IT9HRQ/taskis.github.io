@@ -22,9 +22,9 @@ function taskis() {
                     gapi.client.plus.people.get({
                         "userId": "me"
                     }).execute(function(resp) {
-                        console.log("Retrieved profile for:" ,resp);
+                        console.log("user:", resp);
+                        angular.bootstrap(document, ["taskis"]);
                     });
-                    angular.bootstrap(document, ["taskis"]);
                 });
             });
         } else {
