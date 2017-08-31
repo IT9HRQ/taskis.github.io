@@ -1,13 +1,8 @@
 
-<div class="mainpage">
-    <div
-        id="widgets"
-        class="uk-grid uk-grid-small"
+<div class="board uk-grid uk-grid-small">
+    <project
+        ng-repeat="project in projects"
+        class="widget uk-width-medium-1-3"
         >
-        <project
-            ng-repeat="project in projects"
-            class="widget uk-width-medium-1-3"
-            >
-        </project>
-    </div>
+    </project>
 </div>

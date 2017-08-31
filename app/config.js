@@ -1,6 +1,9 @@
-/**
- *
+/*!
+ * taskis.github.io
+ * Copyright(c) 2016-2017 Javanile.org
+ * MIT Licensed
  */
+
 var config = {
     client_id: "989152715769-5dmdgb43mtqhup9vfglu00qagguqstn4.apps.googleusercontent.com",
     discovery: ["https://people.googleapis.com/$discovery/rest"],
@@ -9,4 +12,4 @@ var config = {
         "https://www.googleapis.com/auth/tasks",
         "https://www.googleapis.com/auth/contacts.readonly"
     ]
-}
+};
