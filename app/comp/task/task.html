@@ -12,6 +12,7 @@
             />
         <span class="caption">
             <span class="label" ng-bind-html="taskline(task) | taskline"></span>
+            ({{ task.score }})
             <span class="controls">
                 <a ng-click="remove(task)"><i class="uk-icon-remove"></i></a>
             </span>

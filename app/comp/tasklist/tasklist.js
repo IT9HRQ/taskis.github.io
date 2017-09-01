@@ -29,6 +29,16 @@ angular
                     $scope.$apply(function() {
                         console.log('tasklist:', resp.items);
                         $scope.tasklist = resp.items;
+                        for (var i in $scope.tasklist) {
+                            var task = $scope.tasklist[i];
+                            task.score = 0;
+                            if (task.notes) {
+                                var score = task.notes.trim().match(/(?:\r\n|\r|\n)/g);
+                                task.score += score ? score.length : 1;
+                            }
+                            var score = task.title.trim().match(/(?:\r\n|\r|\n)/g);
+                            task.score += score ? score.length : 1;
+                        }
                         $rootScope.boardScores[projectIndex] = resp.items.length;
                     });
                 });

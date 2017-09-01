@@ -16,7 +16,6 @@ angular
                 var task = $scope.$ctrl.task;
                 $scope.task = task;
             }
-
             $scope.taskline = function(task) {
                 var taskline = task.notes ? (task.title + "\n" + task.notes).trim() : task.title;
                 return taskline ? taskline : "nothing special";
@@ -39,4 +38,4 @@ angular
         return function(input) {
             return $sce.trustAs("html", nl2br(urlify(input)));
         };
-    })
+    });
