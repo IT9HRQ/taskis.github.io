@@ -9587,6 +9587,10 @@ input.sp-input {
   margin-top: 6px;
 }
 
+.task.completed .uk-checkbox {
+  opacity: .5;
+}
+
 .task label {
   cursor: pointer;
 }

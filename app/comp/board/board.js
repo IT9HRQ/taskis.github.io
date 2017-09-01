@@ -31,7 +31,7 @@ angular
                 var n = s.length;
                 if (n == 3) {
                     if (s[0] > 20 && s[1] < 5 && s[2] < 5) {
-                        return ["uk-width-medium-2-4", "uk-width-medium-1-4", "uk-width-medium-1-4"];
+                        return ["uk-width-medium-3-5", "uk-width-medium-1-5", "uk-width-medium-1-5"];
                     }
                     return ["uk-width-medium-1-3", "uk-width-medium-1-3", "uk-width-medium-1-3"];
                 }

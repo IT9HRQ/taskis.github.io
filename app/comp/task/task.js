@@ -15,7 +15,7 @@ angular
             this.$onInit = function() {
                 var task = $scope.$ctrl.task;
                 $scope.task = task;
-            }
+            };
             $scope.taskline = function(task) {
                 var taskline = task.notes ? (task.title + "\n" + task.notes).trim() : task.title;
                 return taskline ? taskline : "nothing special";
