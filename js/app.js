@@ -374,7 +374,7 @@ $templateCache.put('app/comp/mobnav/mobnav.html','<div id="tm-offcanvas" class="
 $templateCache.put('app/comp/project/project.html','<div class="uk-panel uk-panel-box uk-panel-box-secondary uk-margin-bottom">\n\n    <div class="main-buttons uk-float-right">\n        <div class="uk-button-group">                \n            <button class="uk-button uk-button-small hook-project-modify">\n                <i class="uk-icon-pencil"></i>                    \n            </button>\n            <button class="uk-button uk-button-small hook-project-delete">\n                <i class="uk-icon-remove"></i>\n            </button>\n        </div>\n    </div>\n\n    <h3 class="uk-panel-title">\n       {{ project.title }}\n    </h3>\n  \n    <div class="widget-body">        \n        <tasklist\n            project="project"\n            project-index="projectIndex"\n            project-layout="projectLayout"\n            >\n        </tasklist>\n    </div>\n\n</div>\n');
 $templateCache.put('app/comp/sidebar/sidebar.html','<div class="tm-sidebar uk-width-medium-1-4 uk-hidden-small uk-row-first">\n\n    <ul class="tm-nav uk-nav" data-uk-nav="">\n\n        <li class="uk-nav-header">Beginners</li>\n        <li class="uk-active"><a href="https://getuikit.com/v2/docs/documentation_get-started.html">Get started</a></li>\n        <li><a href="https://getuikit.com/v2/docs/documentation_how-to-customize.html">How to customize</a></li>\n        <li><a href="https://getuikit.com/v2/docs/documentation_layouts.html">Layout examples</a></li>\n        <li class="uk-nav-header">Developers</li>\n        <li><a href="https://getuikit.com/v2/docs/documentation_project-structure.html">Project structure</a></li>\n        <li><a href="https://getuikit.com/v2/docs/documentation_less-sass.html">Less &amp; Sass files</a></li>\n        <li><a href="https://getuikit.com/v2/docs/documentation_create-a-theme.html">Create a theme</a></li>\n        <li><a href="https://getuikit.com/v2/docs/documentation_create-a-style.html">Create a style</a></li>\n        <li><a href="https://getuikit.com/v2/docs/documentation_customizer-json.html">Customizer.json</a></li>\n        <li><a href="https://getuikit.com/v2/docs/documentation_javascript.html">JavaScript</a></li>\n        <li><a href="https://getuikit.com/v2/docs/documentation_custom-prefix.html">Custom prefix</a></li>\n\n    </ul>\n\n</div>\n');
 $templateCache.put('app/comp/task/task.html','<div\n    class="task"\n    ng-class="{completed:completed}"\n    ng-init="completed = task.status == \'completed\'"\n    >\n    <label>\n        <input\n            type="checkbox"\n            class="uk-checkbox"\n            ng-model="completed"\n            ng-change="$ctrl.change(task)"\n            />\n        <span class="caption">\n            <span class="label" ng-bind-html="taskline(task) | taskline"></span>\n            ({{ task.score }})\n            <span class="controls">\n                <a ng-click="remove(task)"><i class="uk-icon-remove"></i></a>\n            </span>\n        </span>\n    </label>\n</div>\n');
-$templateCache.put('app/comp/tasklist/tasklist.html','<div class="tasklist">\n\n    <div ng-if="projectLayout == \'1-column\'">\n        <task ng-repeat="task in tasklist" task="task"></task>\n    </div>\n\n    <div\n        class="uk-grid uk-grid-small"\n        ng-if="projectLayout == \'2-column\'"\n        >\n        <div class="uk-width-medium-1-2">\n            <task ng-repeat="task in tasklist" task="task"></task>\n        </div>\n        <div class="uk-width-medium-1-2">\n            <task ng-repeat="task in tasklist" task="task"></task>\n        </div>\n    </div>\n\n</div>');
+$templateCache.put('app/comp/tasklist/tasklist.html','<div class="tasklist">\n\n    <div ng-if="projectLayout == \'1-column\'">\n        <task ng-repeat="task in tasklist" task="task"></task>\n    </div>\n\n    <div\n        class="uk-grid uk-grid-small"\n        ng-if="projectLayout == \'2-column\'"\n        >\n        <div class="uk-width-medium-1-2">\n            <task ng-repeat="task in tasklist12" task="task"></task>\n        </div>\n        <div class="uk-width-medium-1-2">\n            <task ng-repeat="task in tasklist22" task="task"></task>\n        </div>\n    </div>\n\n</div>');
 $templateCache.put('app/comp/topbar/topbar.html','<nav class="tm-navbar uk-navbar uk-navbar-attached">\n    <div class="uk-container uk-container-center">\n\n        <a class="uk-navbar-brand uk-hidden-small" href="https://getuikit.com/v2/index.html"><img class="uk-margin uk-margin-remove" src="./Get started - UIkit documentation_files/logo_uikit.svg" width="90" height="30" title="UIkit" alt="UIkit"></a>\n\n        <ul class="uk-navbar-nav uk-hidden-small">\n            <li class="uk-active"><a href="https://getuikit.com/v2/docs/documentation_get-started.html">Get Started</a></li>\n            <li><a href="https://getuikit.com/v2/docs/core.html">Core</a></li>\n            <li><a href="https://getuikit.com/v2/docs/components.html">Components</a></li>\n            <li><a href="https://getuikit.com/v2/docs/customizer.html">Customizer</a></li>\n            <li><a href="https://getuikit.com/v2/showcase/index.html">Showcase</a></li>\n            <li><a href="https://getuikit.com/v2/docs/tutorials.html">Tutorials</a></li>\n            <li><a href="https://getuikit.com/">UIkit 3</a></li>\n        </ul>\n\n        <a href="https://getuikit.com/v2/docs/documentation_get-started.html#tm-offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas=""></a>\n\n        <div class="uk-navbar-brand uk-navbar-center uk-visible-small"><img src="./Get started - UIkit documentation_files/logo_uikit.svg" width="90" height="30" title="UIkit" alt="UIkit"></div>\n\n    </div>\n</nav>\n');}]);
 /*!
  * taskis.github.io
@@ -620,6 +620,7 @@ angular
                 var project = $scope.$ctrl.project;
                 var projectIndex = $scope.$ctrl.projectIndex;
                 var projectLayout = $scope.$ctrl.projectLayout;
+
                 $scope.project = project;
                 $scope.projectIndex = projectIndex;
                 $scope.projectLayout = projectLayout;
@@ -631,22 +632,61 @@ angular
                     $scope.$apply(function() {
                         console.log('tasklist:', resp.items);
                         $scope.tasklist = resp.items;
+                        var projectScore = 0;
                         for (var i in $scope.tasklist) {
                             var task = $scope.tasklist[i];
-                            task.score = 0;
-                            if (task.notes) {
-                                var score = task.notes.trim().match(/(?:\r\n|\r|\n)/g);
-                                task.score += score ? score.length : 1;
-                            }
-                            var score = task.title.trim().match(/(?:\r\n|\r|\n)/g);
-                            task.score += score ? score.length : 1;
+                            task.score = getTaskScore(task);
+                            projectScore += task.score;
                         }
-                        $rootScope.boardScores[projectIndex] = resp.items.length;
+                        $rootScope.boardScores[projectIndex] = projectScore;
+
+                        $scope.tasklist12 = [];
+                        $scope.tasklist22 = [];
+
+                        var currentScore = 0;
+                        var projectScore2 = projectScore / 2;
+                        for (var i in $scope.tasklist) {
+                            var task = $scope.tasklist[i];
+                            if (currentScore < projectScore2) {
+                                $scope.tasklist12.push(task);
+                            } else {
+                                $scope.tasklist22.push(task);
+                            }
+                            currentScore += task.score;
+                        }
                     });
                 });
             };
         }
     });
+
+/**
+ * Get score of a task.
+ *
+ * @param task
+ */
+function getTaskScore(task)
+{
+    var score = 0;
+
+    if (task.notes) {
+        var notes = task.notes.trim();
+        var newline = notes.match(/(?:\r\n|\r|\n)/g);
+        score += Math.max(
+            newline ? newline.length : 1,
+            Math.floor(notes.length / 40) + 1
+        );
+    }
+
+    var title = task.title.trim();
+    var newline = title.match(/(?:\r\n|\r|\n)/g);
+    score += Math.max(
+        newline ? newline.length : 1,
+        Math.floor(title.length / 40) + 1
+    );
+
+    return score;
+}
 
 /**
  *
