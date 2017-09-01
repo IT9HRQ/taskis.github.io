@@ -1,5 +1,7 @@
-/**
- *
+/*!
+ * taskis.github.io
+ * Copyright(c) 2016-2017 Javanile.org
+ * MIT Licensed
  */
 
 angular
@@ -23,7 +25,7 @@ angular
 
             $scope.updateBoardLayout = function(s) {
 
-            }
+            };
 
             $scope.updateBoardClasses = function(s) {
                 var n = s.length;
@@ -33,6 +35,10 @@ angular
                     }
                     return ["uk-width-medium-1-3", "uk-width-medium-1-3", "uk-width-medium-1-3"];
                 }
+            };
+
+            $scope.updateProjectLayout = function(s) {
+                return ["2-column", "1-column", "1-column"];
             }
         }
     });

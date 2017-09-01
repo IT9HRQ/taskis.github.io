@@ -12,11 +12,16 @@
     </div>
 
     <h3 class="uk-panel-title">
-       #{{ projectIndex }} {{ project.title }}
+       {{ project.title }}
     </h3>
   
     <div class="widget-body">        
-        <tasklist project-index="projectIndex" project="project"></tasklist>
+        <tasklist
+            project="project"
+            project-index="projectIndex"
+            project-layout="projectLayout"
+            >
+        </tasklist>
     </div>
-  
+
 </div>

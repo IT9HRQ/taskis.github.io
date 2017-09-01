@@ -1,24 +1,19 @@
 <div class="tasklist">
-    #{{ projectIndex }}
-    <div
-        class="task"
-        ng-class="{completed:completed}"
-        ng-repeat="task in tasklist"
-        ng-init="completed = task.status == 'completed'"
-        >
-        <label>
-            <input
-                type="checkbox"
-                class="uk-checkbox"
-                ng-model="completed"
-                ng-change="$ctrl.change(task)"
-                />
-            <span class="caption">
-                <span class="label" ng-bind-html="taskline(task) | taskline"></span>
-                <span class="controls">
-                    <a ng-click="remove(task)"><i class="uk-icon-remove"></i></a>
-                </span>
-            </span>
-        </label>
+
+    <div ng-if="projectLayout == '1-column'">
+        <task ng-repeat="task in tasklist" task="task"></task>
     </div>
+
+    <div
+        class="uk-grid uk-grid-small"
+        ng-if="projectLayout == '2-column'"
+        >
+        <div class="uk-width-medium-1-2">
+            <task ng-repeat="task in tasklist" task="task"></task>
+        </div>
+        <div class="uk-width-medium-1-2">
+            <task ng-repeat="task in tasklist" task="task"></task>
+        </div>
+    </div>
+
 </div>
